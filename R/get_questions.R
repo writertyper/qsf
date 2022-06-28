@@ -49,7 +49,7 @@ sq_as_df <- function(l){
 	df <- select(df, "ID", everything(), -"value")
 	df <- add_column(df, 
 					 QuestionType=pluck(l, "Payload", "QuestionType"), 
-			 		 DataExportTag(l, "Payload", "DataExportTag"),
+			 		 DataExportTag = pluck(l, "Payload", "DataExportTag"),
 					 PrimaryAttribute=pluck(l, "PrimaryAttribute"), 
 					 SecondaryAttribute=pluck(l, "SecondaryAttribute"))
 	return(df)
